@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Passing</title>
+</head>
+<body>
+    <div id="dataBinding">
+        <h1 v-bind:title="tagTitle">{{message}}</h1>
+        <h2>Message in capslock: {{ message.toUpperCase()}}</h2>
+        <p>I'm {{ person.name}}. I have {{person.age}} years old.</p>
+        <span v-html="tag"></span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: '#dataBinding',
+            data: {
+                message: 'Display message...',
+                person: {
+                    name: 'Luiz Fernando',
+                    age: 30
+                },
+                tag: '<button class="btn btn-primary">Click here</button>',
+                tagTitle: 'Is a tag title'
+            }
+
+        });
+    </script>
+</body>
+</html>
